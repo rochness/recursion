@@ -136,12 +136,9 @@ var parseJSON = function(json) {
   			charIndex++;
   			return array;
   		}
-  		/*if(json.charAt(json.length-1)!==']'){
-  			error("this is not a real array");
-  		}*/
   		do{
   			array.push(value());
-  			beGoneWhiteSpaces;
+  			beGoneWhiteSpaces();
   			if(json.charAt(charIndex)===']'){
   				charIndex++;
   				return array;
@@ -162,7 +159,7 @@ var parseJSON = function(json) {
   		} 
   		do{
   			key = value();
-  			//beGoneWhiteSpaces;
+  			beGoneWhiteSpaces();
   			if(json.charAt(charIndex)!==':'){
   				error("should be a colon after key value of object");
   			}
